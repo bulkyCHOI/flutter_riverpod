@@ -37,14 +37,14 @@ class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
 
   void toggleHasBought({required String name}) {
     state = state
-        .map((e) => e.name == name
-            ? ShoppingItemModel(
+        .map((e) => e.name == name //이름이 같으면
+            ? ShoppingItemModel(  //새로운 모델을 만들어서 hasBought만 바꿔서 넣고
                 name: e.name,
                 quantity: e.quantity,
                 hasBought: !e.hasBought,
                 isSpicy: e.isSpicy,
               )
-            : e)
-        .toList();
+            : e)  //다르면 변화없음
+        .toList();  //map()을 사용하면 iterable type이므로 List로 변환
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rd/layout/default_layout.dart';
+import 'package:rd/screen/future_provider_screen.dart';
 import 'package:rd/screen/state_notifier_provider_screen.dart';
 import 'package:rd/screen/state_provider_screen.dart';
 
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       title: 'HomeScreen',
       body: ListView(
         children: [
+          SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -22,6 +24,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('StateProviderScreen'),
           ),
+          SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -31,6 +34,17 @@ class HomeScreen extends StatelessWidget {
               );
             },
             child: Text('StateNotifierProviderScreen'),
+          ),
+          SizedBox(height: 16.0),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => FutureProviderScreen(),
+                ),
+              );
+            },
+            child: Text('FutureProviderScreen'),
           )
         ],
       ),
